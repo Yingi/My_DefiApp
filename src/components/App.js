@@ -120,7 +120,10 @@ class App extends Component {
 
   render() {
     let content
-     if(this.state.loading) {
+    // In the below if statement, let this.state.loading be true, I only did this so
+    // you can see the layout of the homescreen. When you connect to your local blockchain or the mainnet
+    // this.state.loading in the below if statement needs to be true.
+     if(!this.state.loading) {
        content = <p id='loader' className="text-center">Loading....</p>
      }
      else{
@@ -133,7 +136,7 @@ class App extends Component {
        />
      }
     return (
-      <div>
+      <div style={{height: '100vh', background: `linear-gradient(to right, rgb(75, 0, 0, 0), rgb(75, 0, 0, 1) )`}}>
         <Navbar account={this.state.account} />
         <div className="container-fluid mt-5">
           <div className="row">
